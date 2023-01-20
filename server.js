@@ -12,3 +12,9 @@ const PORT = 8888;
 
 // set up middleware
 app.set("view engine", "ejs");
+app.set(express.static("public")); // static files in public folder
+app.use(express.urlencoded({extended: true})); // parse requests from forms
+
+
+// set up server
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
